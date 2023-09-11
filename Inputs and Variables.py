@@ -1,3 +1,4 @@
 
 name=input("what is your name?\n")
-print(name)
+if name == "Joe":
+    print("welcome",name)
