@@ -1,7 +1,7 @@
 #14/09/23
 total = 0
 final = 0
-paid = int(input("paid in"))
+paid = int(input("paid in "))
 years = int(input("years"))
 for i in range(years):
     start = final
