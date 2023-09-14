@@ -8,4 +8,4 @@ for i in range(years):
     total = final + paid
     interest = total * 0.1
     final = total + interest
-    print(start,paid,final,interest,i, "\n")
+    print(start,paid,final,interest,i+1, "\n")
