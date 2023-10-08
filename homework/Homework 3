@@ -1,0 +1,35 @@
+print("Welcome to money managing services")
+name = input("What is your name?\n")
+namelist = list(name) # turns name into list
+for i in range(len(namelist)):
+        if namelist[i].isdigit() == True:
+           check = True # goes through name character by character to check if it contains number and if so sets check true
+           while check == True:
+               name = input("Please make sure your name has no numbers in.\n")
+               namelist = list(name) # asks user to reinput name and re validates it has no number in
+               for i in range(len(namelist)):
+                   if namelist[i].isdigit() == True:
+                       check = True      
+                   else:
+                       check = False
+postcode = input("What is your postcode?\n")
+while len(postcode) < 6 or len(postcode) > 8: # validates postcode is correct length
+    postcode = input("Please make sure your postcode is in the correct format")
+phone = input("What is your phone number?")
+while len(phone) != 12:
+    phone = input("What is your phone number?") # validates phone number is right length
+phonelist = list(phone) # turns phone number to list
+phonelist.remove(" ") # removes gap from middle of phone number
+for i in range(len(phonelist)):
+    if phonelist[i].isdigit() == False: # checks if phone number is all numbers or if contains letters
+        checkB = True
+        while checkB == True:
+            phone = input("Please make sure your phone number is valid.\n")
+            phonelist = list(phone)
+            phonelist.remove(" ")
+            for i in range(len(phonelist)):
+                if phonelist[i].isdigit() == False: # checks again to see if number has been fixed
+                    checkB = True
+                else:
+                    checkB = False
+print("your name is",name,"your postcode is", postcode,"and your phone number is", phone)      
