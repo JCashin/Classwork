@@ -13,9 +13,9 @@ while menu == True:
         lives = 6
         randomwords = random.randint(0,len(words)-1)
         randomword = words[randomwords] # picks random number to pick word from list 
-        print(randomword) # testing purposes remove when done
+        #print(randomword) # testing purposes remove when done
         splitword = [*randomword] # splits word into letters
-        print(splitword) # testing purposes remove when done
+        #print(splitword) # testing purposes remove when done
         length = len(splitword)
         mysteryword = []
         for i in splitword:
@@ -24,7 +24,7 @@ while menu == True:
             print(mysteryword)
             guess = input("What is your guess? (Word or letter)\n")
             guess = guess.upper()
-            print(lives) # testing purposes remove when done
+            #print(lives) # testing purposes remove when done
             if len(guess) > 1: # if guess is a word not a letter it'll check if its the guessed word
                 if guess == randomword:
                     print("Congratulations, that's the correct word!")
@@ -49,6 +49,7 @@ while menu == True:
                     lives = lives - 1
                 if mysteryword == splitword:
                     print("Congratulations, that's the correct word!")
+                    print(lives)
                     file = open("File Handing\Results.txt","a")
                     file.write("\n"+randomword+", "+str(lives)) # if word guessed it will add to text file with number of lives left
                     file.close()
@@ -56,6 +57,9 @@ while menu == True:
             print(lives) # testing purposes remove when done
             if lives == 0:
                 print("You died :(")
+                file = open("File Handing\Results.txt","a")
+                file.write("\n"+randomword+", "+str(lives)) # if word guessed it will add to text file with number of lives left
+                file.close()
                 menuB = False
     elif menuchoice == "B":
         newword = input("What word do you want to add to the list?\n")
